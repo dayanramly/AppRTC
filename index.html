@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Landing Page</title>
+
+	<link href="dist/css/style.min.css" rel="stylesheet">
+	<link href="dist/css/custom.min.css" rel="stylesheet">
+</head>
+<body class="bgr-grey">
+	<nav class="navbar navbar-default nav-header">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#default-header" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="dist/img/intellinum-logo-white.png"></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="default-header">
+				<ul class="nav navbar-nav navbar-right right-content">
+					<li class="app-name">
+						Intellinum<strong> Apprtc</strong>
+					</li>
+					<li class="dropdown profile-dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							Dayan 
+							<img src="dist/img/people-10.jpg">
+							<span class="ion-chevron-down"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container timeline-main-content">
+		<div class="row">
+			<div class="col-md-4 timeline-left">
+				<div class="default-content timeline-left-content">
+					<div class="top-profile text-center">
+						<div class="profile-image">
+							<div class="img-responsive white-bgr">
+								<img src="dist/img/people-10.jpg">
+							</div>
+						</div>
+						<div class="profile-desc">
+							<h3 id="username"></h3>
+							<div class="panel panel-default" id="panel-video">
+								<div class="panel-body">
+									<video id="local-video" autoplay muted></video>
+									<a href="#" class="btn btn-sm btn-danger" id="hangup">End call</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="profile-menu">
+						<h4>Who's online</h4>
+						<ul>
+							<li class="btn btn-block btn-normal">
+								<i class="ion-record icon-green"></i> Dayan Ramly Ramadhan
+								<a href="#">
+									<i class="ion-ios-telephone icon-right"></i>
+								</a>
+							</li>
+							<li class="btn btn-block btn-normal">
+								<i class="ion-record"></i> Galih Dwi Jatmiko
+								<a href="#">
+									<i class="ion-ios-telephone icon-right"></i>
+								</a>
+							</li>
+							<li class="btn btn-block btn-normal">
+								<i class="ion-record icon-green"></i> Romi Halimman
+								<a href="#">
+									<i class="ion-ios-telephone icon-right"></i>
+								</a>
+							</li>
+							<li class="btn btn-block btn-normal">
+								<i class="ion-record"></i> Yanuar Arifin
+								<i class="ion-ios-telephone icon-right"></i>
+							</a>
+						</li>
+						<li class="btn btn-block btn-normal">
+							<i class="ion-record"></i> Adi Setiawan
+							<a href="#">
+								<i class="ion-ios-telephone icon-right"></i>
+							</a>
+						</li>
+						<li class="btn btn-block btn-normal">
+							<i class="ion-record"></i> Jonie Andrean
+							<a href="#">
+								<i class="ion-ios-telephone icon-right"></i>
+							</a>
+							<a href="#">
+								<i class="ion-ios-videocam icon-right"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8 timeline-content">
+
+			<div class="row default-content">
+				<div class="col-md-12">
+					<div class="video-wrapper"></div>
+					<h4>Dayan Ramly Ramadhan</h4>
+					<p>Ongoing Call</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="row footer-page">
+		<div class="col-md-6 footer-info">
+			© 2016 · <a href="http://intellinum.com">Intellinum</a>
+		</div>
+		<div class="col-md-6 footer-link">
+			<ul>
+				<li><a href="#">Intellinum Apprtc</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="dist/scripts/scripts.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.carousel').carousel({
+			interval: false
+		})
+	});
+</script>
+</body>
+</html>

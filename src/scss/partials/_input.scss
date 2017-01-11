@@ -1,0 +1,130 @@
+.input-round{
+	border-radius: 10em;
+	border: 0;
+	height: 45px;
+	text-align: center;
+	font-size: 1.2em;
+}
+.input-underline{
+	border: 0;
+	height: 45px;
+	font-size: 1.1em;
+	background: transparent;
+	border-radius: 0;
+	border-bottom: 1px solid $white;
+	box-shadow: none;
+	outline: 0;
+	color: $white;
+	font-weight: 300;
+	@include input-remove-outline();
+
+	&::-webkit-input-placeholder {
+		color: $white;
+		font-weight: 200;
+	}
+	&:-moz-placeholder {
+		color: $white;
+		font-weight: 200;
+	}
+	&::-moz-placeholder {
+		color: $white;
+		font-weight: 200;
+	}
+	&:-ms-input-placeholder {
+		color: $white;
+		font-weight: 200;
+	}
+}
+.input-transparant{
+	color: $white;
+	@include bgr-transparent($white, 0.3);
+	&::-webkit-input-placeholder {
+		@include font-transparent($white, 0.3);
+		font-weight: 300;
+	}
+	&:-moz-placeholder {
+		@include font-transparent($white, 0.3);
+		font-weight: 300;
+	}
+	&::-moz-placeholder {
+		@include font-transparent($white, 0.3);
+		font-weight: 300;
+	}
+	&:-ms-input-placeholder {
+		@include font-transparent($white, 0.3);
+		font-weight: 300;
+	}
+}
+.checkbox label{
+	@include link-color($white-link);
+}
+.input-search{
+	background: $grey-search;
+	border: 0;
+	box-shadow: none;
+	border-radius: .5em;
+	width: 100%;
+	@include input-remove-outline();
+}
+.input-comment{
+	background: $white;
+	box-shadow: none;
+	border-radius: .1em;
+	width: 100%;
+	@include input-remove-outline();
+}
+//right left icon button
+.left-inner-addon, .right-inner-addon{
+	position: relative;
+	i, a{
+		position: absolute;
+		padding: 7px 12px;
+		pointer-events: none;
+		height: 34px;
+		font-size: 1.3em;
+	}
+	span{
+		position: absolute;
+		right: 0;
+		top: 0;
+		.btn-search, .btn-comment{
+			height: 34px;
+			font-size: 1.3em;
+			@include btn-color(none,none, $grey-search-color);
+		}
+	}
+}
+.left-inner-addon{
+	input{
+		padding-left: 30px;  
+	}
+}
+.right-inner-addon{
+	input{
+		padding-right: 30px;  
+	}
+	i, a{
+		right: 0px;
+	}
+}
+
+// responsive content
+@media (max-width: $screen-xs-max) { 
+
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { 
+	.input-search{
+		min-width: 0;
+	}
+}
+
+@media (min-width: $screen-md-min){ 
+	.input-search{
+		min-width: 400px;
+	}
+}
+@media (min-width: $screen-lg-min) { 
+	.input-search{
+		min-width: 500px;
+	}
+}

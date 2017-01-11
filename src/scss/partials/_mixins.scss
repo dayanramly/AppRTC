@@ -1,0 +1,64 @@
+@mixin bgr-transparent($color, $alpha){
+	background: rgba($color, $alpha);
+}
+@mixin font-transparent($color, $alpha){
+	color: rgba($color, $alpha);
+}
+@mixin padding($top, $right, $bottom, $left){
+	padding-top: $top;
+	padding-right: $right;
+	padding-bottom: $bottom;
+	padding-left: $left;
+}
+@mixin margin($top, $right, $bottom, $left){
+	margin-top: $top;
+	margin-right: $right;
+	margin-bottom: $bottom;
+	margin-left: $left;
+}
+@mixin btn-color($bgr, $border, $color){
+	background: $bgr;
+	color: $color !important;
+	border: 1px solid $border;
+	i{
+		color: $color !important;
+	}
+	@if $bgr == 'none'{
+		&:hover{
+			background: none;
+		}
+		&:focus,&:hover,&:active,&:visited{
+			color: $color;
+		}
+	}
+	@else{
+		&:hover{
+			background: darken($bgr,6.5%);
+		}
+		&:focus,&:hover,&:active,&:visited{
+			color: darken($color,6.5%);
+		}
+	}
+	&:focus,&:hover,&:active,&:visited{
+		outline: 0 !important;
+		outline-offset: 0 !important;
+		box-shadow: none;
+	}
+}
+@mixin link-color($color){
+	color: $color;
+	&:hover{
+		color: darken($color,10%);
+	}
+}
+@mixin input-remove-outline(){
+	&:focus{
+		border-color: none !important;
+		box-shadow: none !important;
+	}
+}
+@mixin background-border($height, $width, $color){
+	background: $color;
+	width: $height+10;
+	height: $width+10;
+}

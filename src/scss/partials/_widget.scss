@@ -1,0 +1,162 @@
+.widget-container{
+	padding: 0;
+	.widget-title{
+		padding: 8px 12px;
+		font-size: 0.9em;
+		color: $grey-title-widget;
+	}
+	.widget-image{
+		img{
+			width: 100%;
+		}
+	}
+	.widget-list-people{
+		padding: 10px 15px;
+		ul>li{
+			margin-bottom: 20px;
+			span.widget-list-people-img, .widget-list-people-detail{
+				display: inline-block;
+			}
+			span.widget-list-people-img{
+				vertical-align: top;
+				width: 75px;
+				img{
+					border-radius: 100%;
+					width: 60px;
+					height: 60px
+				}
+			}
+			.widget-list-people-detail{
+				a{
+					&#widget-list-people-name{
+						font-size: 1em;
+						font-weight: 500;
+						margin-bottom: 3px;
+					}
+				}
+				p{ 
+					&#widget-list-people-friends{
+						color: $grey-timeline-widget-mutual-friends;
+						font-size: .85em;
+					}
+				}
+			}
+		}	
+	}
+	.widget-carousel{
+		min-height: 200px;
+		padding: 15px 15px 25px;
+		.widget-carousel-container{
+			.widget-carousel-content{
+				text-align: center;
+				.item{
+					height: 100%;
+					padding: 0px 20px;
+					img{
+						margin: 0 auto 15px;
+						border-radius: 100%;
+						height: 75px;
+						width: 75px;
+					}
+					h4{
+						color: $link-bottom-content;
+						margin-bottom: 5px;
+						font-size: 1.3em;
+						font-weight: 400;
+					}
+					p{
+						color: $grey-widget-sugested-page;
+						font-size: .9em;
+					}
+					&.active{
+
+					}
+				}
+			}
+			.widget-carousel-control{
+				font-size: 3em;
+				color: #ccc;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				padding-top: 45px;
+				&.left{
+				}
+				&.right{
+					right: 0;
+				}
+			}
+		}
+	}
+	span{
+		&.widget-link{
+			text-align: right;
+			float: right;
+			font-size: 0.9em;
+		}
+	}
+	&.widget-about, &.widget-friends{
+		.widget-about-title, .widget-friends-title{
+			padding: 15px;
+			border-bottom: 1px solid $grey-search;
+			font-weight: 500;
+			font-size: 1em;
+		}
+	}
+	&.widget-about{
+		.widget-about-list{
+			padding: 0px 25px;
+			ul{
+				margin-bottom: 0;
+				li{
+					border-bottom: 1px solid $grey-search;
+					color: $grey-menu-left-icon;
+					padding: 8px 0px;
+					&:last-child{
+						border-bottom: 0;
+					}
+					span, p{
+						display: table-cell;
+						vertical-align: middle;
+					}
+					span{
+						font-size: 2em;
+						width: 35px;
+					}
+					p{
+
+					}				
+				}
+			}
+		}
+	}
+	&.widget-friends{
+		.widget-friends-list{
+			padding: 15px 25px;
+			ul{
+				margin-bottom: 0;
+				li{
+					display: inline-block;
+					text-align: center;
+					margin-bottom: 20px;
+					padding: 0 10px;
+					line-height: normal;
+					a{
+						color: $grey-menu-left-icon;
+						font-size: .9em;
+						img{
+							width: 60px;
+							height: 60px;
+							border-radius: 100%;
+							display: block;
+							margin: 0 auto 5px
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: $screen-xs-max){ 
+
+}
