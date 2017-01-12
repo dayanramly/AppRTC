@@ -76,7 +76,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="myFunction()">
+									<a href="#" onclick="initChat()">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -189,102 +189,6 @@
 			</div>
 		</div>
 
-		<!-- chat container -->
-		<div class="chat-container container"></div>
-
-		<!-- chat initializing -->
-		<div class="row chat-window col-xs-5 col-md-3" id="chat_window_1">
-			<div class="col-xs-12 col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading top-bar">
-						<div class="col-md-8 col-xs-8">
-							<h3 class="panel-title"><span class="ion-chatbox"></span> Dayan Ramly</h3>
-						</div>
-						<div class="col-md-4 col-xs-4" style="text-align: right;">
-							<a href="#"><span id="minim_chat_window" class="ion-minus-round icon_minim"></span></a>
-							<a href="#"><span class="ion-close-round icon_close" data-id="chat_window_1"></span></a>
-						</div>
-					</div>
-					<div class="panel-body msg_container_base">
-						<div class="row msg_container base_sent">
-							<div class="col-md-10 col-xs-10">
-								<div class="messages msg_sent">
-									<p>Hi</p>
-									<time datetime="2009-11-13T20:00">Dayan • 51 min</time>
-								</div>
-							</div>
-							<div class="col-md-2 col-xs-2 avatar">
-								<img src="dist/img/people-10.jpg" class=" img-responsive ">
-							</div>
-						</div>
-						<div class="row msg_container base_receive">
-							<div class="col-md-2 col-xs-2 avatar">
-								<img src="dist/img/people-10.jpg" class=" img-responsive ">
-							</div>
-							<div class="col-md-10 col-xs-10">
-								<div class="messages msg_receive">
-									<p>Yo</p>
-									<time datetime="2009-11-13T20:00">Yanuar • 51 min</time>
-								</div>
-							</div>
-						</div>
-						<div class="row msg_container base_receive">
-							<div class="col-md-2 col-xs-2 avatar">
-								<img src="dist/img/people-10.jpg" class=" img-responsive ">
-							</div>
-							<div class="col-xs-10 col-md-10">
-								<div class="messages msg_receive">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-									<time datetime="2009-11-13T20:00">Yanuar • 51 min</time>
-								</div>
-							</div>
-						</div>
-						<div class="row msg_container base_sent">
-							<div class="col-xs-10 col-md-10">
-								<div class="messages msg_sent">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-									<time datetime="2009-11-13T20:00">Dayan • 51 min</time>
-								</div>
-							</div>
-							<div class="col-md-2 col-xs-2 avatar">
-								<img src="dist/img/people-10.jpg" class=" img-responsive ">
-							</div>
-						</div>
-						<div class="row msg_container base_receive">
-							<div class="col-md-2 col-xs-2 avatar">
-								<img src="dist/img/people-10.jpg" class=" img-responsive ">
-							</div>
-							<div class="col-xs-10 col-md-10">
-								<div class="messages msg_receive">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-									<time datetime="2009-11-13T20:00">Yanuar • 51 min</time>
-								</div>
-							</div>
-						</div>
-						<div class="row msg_container base_sent">
-							<div class="col-md-10 col-xs-10 ">
-								<div class="messages msg_sent">
-									<p>ok</p>
-									<time datetime="2009-11-13T20:00">Dayan • 51 min</time>
-								</div>
-							</div>
-							<div class="col-md-2 col-xs-2 avatar">
-								<img src="dist/img/people-10.jpg" class=" img-responsive ">
-							</div>
-						</div>
-					</div>
-					<div class="panel-footer message-footer">
-						<div class="input-group">
-							<input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
-							<span class="input-group-btn">
-								<button class="btn btn-primary btn-sm" id="btn-chat">Send</button>
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<!-- footer section -->
 		<div class="row footer-page">
 			<div class="col-md-6 footer-info">
@@ -300,62 +204,12 @@
 	<script type="text/javascript" src="dist/scripts/scripts.min.js"></script>
 	<script type="text/javascript">
 
-		$(document).ready(function() {
-			$("#chat_window_1").hide();
-		});
+		function initChat() {
 
-		var counter = 0;
-
-		function myFunction() {
-			window.open("http://www.w3schools.com", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=400,height=400");
+			var chatWindow = window.open("chat_container.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=380,height=480");
+			chatWindow.document.title = 'testing';
 		}
 
-		$(document).on('click', '.panel-heading span.icon_minim', function (e) {
-			var $this = $(this);
-			if (!$this.hasClass('panel-collapsed')) {
-				$this.parents('.panel').find('.panel-body').slideUp();
-				$this.addClass('panel-collapsed');
-			} else {
-				$this.parents('.panel').find('.panel-body').slideDown();
-				$this.removeClass('panel-collapsed');
-			}
-		});
-		$(document).on('focus', '.panel-footer input.chat_input', function (e) {
-			var $this = $(this);
-			if ($('#minim_chat_window').hasClass('panel-collapsed')) {
-				$this.parents('.panel').find('.panel-body').slideDown();
-				$('#minim_chat_window').removeClass('panel-collapsed');
-			}
-		});
-
-		function newChat(id) {
-			var container = $(".chat-container").children().hasClass('chat-window');
-			var size = $( ".chat-window:last-child" ).css("margin-right");
-			counter ++;
-
-			// check chat available
-			if (container){
-				size_total = parseInt(size) + 265;
-			}		
-			else{
-				size_total = 0;
-			}
-			if(counter <= 4){
-				var clone = $( "#chat_window_1" ).clone().appendTo(".chat-container");
-				clone.show();
-				clone[0].setAttribute("id", id);
-				clone.css("margin-right", size_total);
-
-				var close = clone.children().find('.icon_close');
-				close[0].setAttribute("data-id", id);
-			}
-		}
-
-		$(document).on('click', '.icon_close', function (e) {
-			var ids = $(this).data("id");
-			$('#' + ids).remove();
-			counter --;
-		});
 
 	</script>
 </body>
