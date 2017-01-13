@@ -76,7 +76,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="initChat()">
+									<a href="#" onclick="initChat('Dayan Ramly')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -92,7 +92,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone"></i>
 									</a>
-									<a href="#" onclick="newChat('galih')">
+									<a href="#" onclick="initChat('Galih Dwi Jatmiko')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -108,7 +108,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="newChat('romi')">
+									<a href="#" onclick="initChat('Romi Halimman')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -124,7 +124,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="newChat('yanuar')">
+									<a href="#" onclick="initChat('Yanuar Arifin')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -140,7 +140,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="newChat('adi')">
+									<a href="#" onclick="initChat('Adi Setiawan')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -156,7 +156,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="newChat('jonie')">
+									<a href="#" onclick="initChat('Jonie Andrean')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -203,11 +203,14 @@
 	</div>
 	<script type="text/javascript" src="dist/scripts/scripts.min.js"></script>
 	<script type="text/javascript">
-
-		function initChat() {
-
-			var chatWindow = window.open("chat_container.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=380,height=480");
-			chatWindow.document.title = 'testing';
+		var chatWindow;
+		function initChat(chats) {
+			if (typeof(Storage) !== "undefined") {
+				sessionStorage.user = chats;
+			} else {
+				console.log("Sorry, your browser does not support Web Storage...");
+			}
+			chatWindow	= window.open("chat_container.html", "", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=380,height=480");
 		}
 
 
