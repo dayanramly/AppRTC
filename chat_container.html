@@ -108,8 +108,12 @@
 	<script type="text/javascript">
 
 		$(document).ready(function() {
-			document.title = sessionStorage.user + " - chats";
+			var getUser = localStorage.getItem("user");
+			var userArray = JSON.parse(getUser);
+			var lastArr = userArray[userArray.length-1];
+			document.title = lastArr.name + " - chats";
 		});
+
 
 	</script>
 </body>

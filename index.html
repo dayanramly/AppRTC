@@ -76,7 +76,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="initChat('Dayan Ramly')">
+									<a href="#" onclick="initChat(1,'Dayan Ramly')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -92,7 +92,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone"></i>
 									</a>
-									<a href="#" onclick="initChat('Galih Dwi Jatmiko')">
+									<a href="#" onclick="initChat(2,'Galih Dwi Jatmiko')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -108,7 +108,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="initChat('Romi Halimman')">
+									<a href="#" onclick="initChat(3,'Romi Halimman')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -124,7 +124,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="initChat('Yanuar Arifin')">
+									<a href="#" onclick="initChat(4,'Yanuar Arifin')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -140,7 +140,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="initChat('Adi Setiawan')">
+									<a href="#" onclick="initChat(5,'Adi Setiawan')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -156,7 +156,7 @@
 									<a href="#">
 										<i class="ion-ios-telephone call"></i>
 									</a>
-									<a href="#" onclick="initChat('Jonie Andrean')">
+									<a href="#" onclick="initChat(6,'Jonie Andrean')">
 										<i class="ion-ios-chatbubble chat"></i>
 									</a>
 									<a href="#">
@@ -192,21 +192,6 @@
 	</div>
 	<!-- footer section -->
 	<footer class="container-fluid footer-section">
-<!-- 		<div class="row footer-page">
-			<div class="col-md-6">
-				<span class="footer-page-img">
-					<img src="dist/img/intellinum-logo-white.png">
-				</span>
-				<div class="footer-page-text">
-				<p>Video chat from intellinum. We serve the best user interface for you to keep contact to other. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<ul>
-					<li><a href="#">Intellinum Apprtc</a></li>
-				</ul>
-			</div>
-		</div> -->
 		<div class="row footer-copyright">
 			<div class="col-md-12 text-center">
 				© 2017 · <a href="http://intellinum.com">Intellinum</a>
@@ -216,16 +201,32 @@
 	<script type="text/javascript" src="dist/scripts/scripts.min.js"></script>
 	<script type="text/javascript">
 		var chatWindow;
-		function initChat(chats) {
-			if (typeof(Storage) !== "undefined") {
-				sessionStorage.user = chats;
-			} else {
-				console.log("Sorry, your browser does not support Web Storage...");
-			}
-			chatWindow	= window.open("chat_container.html", "", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=380,height=480");
+		var userArray = [];
+		// get localstorage item
+		var getUser = localStorage.getItem("user");
+		if (getUser != null){
+			userArray = JSON.parse(getUser);
 		}
 
+		function initChat(chatId, chatName) {
+			var obj ={
+				id: chatId,
+				name: chatName
+			};
 
+			// check chatId on array
+			var result = $.grep(userArray, function(e){ return e.id == chatId; });
+
+			if ((result.length == 0) && (userArray.length !=  null)){
+				userArray.push(obj);
+				localStorage.setItem("user", JSON.stringify(userArray));
+				chatWindow	= window.open("chat_container.html", "", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=380,height=480");
+			};
+		};
+
+		if(chatWindow.closed) {
+			console.log("Bye now!");
+		};
 	</script>
 </body>
 </html>
