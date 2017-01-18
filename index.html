@@ -19,7 +19,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img src="dist/img/intellinum-logo-white.png"></a>
+				<a class="navbar-brand" href="#"><img src="dist/img/logo_white.png"></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="default-header">
@@ -200,6 +200,11 @@
 	</footer>
 	<script type="text/javascript" src="dist/scripts/scripts.min.js"></script>
 	<script type="text/javascript">
+
+		$(document).ready(function(){
+			localStorage.clear();
+		});
+		
 		var chatWindow;
 		var userArray = [];
 		// get localstorage item
@@ -222,10 +227,6 @@
 				localStorage.setItem("user", JSON.stringify(userArray));
 				chatWindow	= window.open("chat_container.html", "", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=380,height=480");
 			};
-		};
-
-		if(chatWindow.closed) {
-			console.log("Bye now!");
 		};
 	</script>
 </body>

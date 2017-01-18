@@ -33,9 +33,9 @@
 	padding: 5px 0px;
 	border-color: $dark-blue;
 	.navbar-brand{
-		padding: 0;
+		padding: 5px;
 		img{
-			height: 55px;
+			height: 40px;
 		}
 	}
 	.right-content{
@@ -130,35 +130,6 @@
 		color: $grey-search-color;
 	}
 }
-// .footer-page{
-// 	border-top: 2px solid $grey-border-bottom;
-// 	padding-top: 20px;
-// 	border-top: 2px solid #e1e1e1;
-// 	padding-bottom: 30px;
-// 	.footer-info{
-
-// 	}
-// 	.footer-link{
-// 		text-align: right;
-// 		ul>li{
-// 			display: inline-block;
-// 			&:before{
-// 				content: "\2022";
-// 				padding-right: 5px;
-// 				color: #aaa;
-// 				font-size: 0.8em;
-// 			}
-// 			&:first-child{
-// 				&:before{
-// 					content: " ";
-// 				}
-// 			}
-// 			a{
-
-// 			}
-// 		}
-// 	}
-// }
 
 // responsive content
 @media (max-width: $screen-xs-max){ 
